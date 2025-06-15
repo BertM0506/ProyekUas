@@ -507,9 +507,8 @@ body {
 /* --- Specific styles for transaksi/riwayat.php --- */
 .transaction-card {
     background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
     padding: 15px; /* Sesuaikan padding */
+    border-radius: 8px;
     margin-bottom: 15px; /* Sesuaikan margin */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
