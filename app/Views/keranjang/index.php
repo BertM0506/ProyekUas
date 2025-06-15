@@ -12,15 +12,17 @@
 <body>
 
     <!-- Top Navbar (Mirip Sibayak) -->
-    <nav class="top-navbar-sibayak">
+   <nav class="top-navbar-sibayak">
         <div class="container d-flex align-items-center">
             <a href="<?= base_url('/') ?>">
                 <img src="<?= base_url('uploads/logo.png') ?>" alt="PDMP Outdoor Logo" class="logo-brand">
             </a>
-            <div class="search-box">
-                <input type="text" placeholder="" aria-label="Cari produk">
-                <button type="button" aria-label="Search"><i class="fas fa-search"></i></button>
-            </div>
+            <!-- FORMULIR PENCARIAN -->
+            <form action="<?= base_url('produk') ?>" method="get" class="search-box" onsubmit="return true;"> <!-- Tambah onsubmit="return true;" -->
+                <input type="text" name="keyword" placeholder="" aria-label="Cari produk" value="<?= service('request')->getGet('keyword') ?? '' ?>">
+                <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+            </form>
+            <!-- AKHIR FORMULIR PENCARIAN -->
             <div class="user-cart-menu">
                 <?php if (session()->get('isLoggedIn')): ?>
                     <a href="<?= base_url('keranjang') ?>"><i class="fas fa-shopping-cart"></i> Keranjang</a>
@@ -32,6 +34,7 @@
             </div>
         </div>
     </nav>
+
 
     <!-- Main Menu (Mirip Sibayak) -->
     <nav class="main-menu-sibayak">
