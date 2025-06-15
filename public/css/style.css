@@ -15,7 +15,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- CSS for Header (Shared across all views) --- */
+/* --- CSS untuk Header (Shared across all views) --- */
 .top-navbar-sibayak {
     background-color: #f8f9fa;
     border-bottom: 1px solid #e0e0e0;
@@ -25,8 +25,8 @@ body {
     justify-content: space-between;
 }
 .top-navbar-sibayak .logo-brand {
-    height: 45px; /* Back to a more proportional size for top navbar */
-    margin-right: 15px; /* Add right margin for spacing from search box */
+    height: 60px; /* Ukuran logo yang proporsional untuk top navbar */
+    margin-right: 15px; /* Tambahkan margin kanan untuk jarak dari search box */
 }
 .top-navbar-sibayak .search-box {
     display: flex;
@@ -35,7 +35,7 @@ body {
     border-radius: 5px;
     overflow: hidden;
     flex-grow: 1;
-    max-width: 400px; /* Adjust max search bar width */
+    max-width: 400px; /* Sesuaikan lebar max search bar */
 }
 .top-navbar-sibayak .search-box input {
     border: none;
@@ -56,7 +56,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: auto; /* Moves to the right */
+    margin-left: auto; /* Memindahkan ke kanan */
 }
 .top-navbar-sibayak .user-cart-menu a {
     color: #333;
@@ -80,7 +80,7 @@ body {
 }
 .main-menu-sibayak .container {
     display: flex;
-    justify-content: flex-end; /* Menu Moves to the right */
+    justify-content: flex-end; /* Menu Pindah ke KANAN */
 }
 .main-menu-sibayak ul {
     list-style: none;
@@ -194,7 +194,7 @@ body {
 .product-card img {
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit: cover; /* Use cover for uniform appearance */
     display: block;
     border-bottom: 1px solid #eee;
 }
@@ -303,7 +303,7 @@ body {
 .product-card-sibayak .card-img-top {
     width: 100%;
     height: 180px;
-    object-fit: cover; /* Use cover to ensure image fills the space */
+    object-fit: cover; /* Use cover for uniform appearance in product listings */
     display: block;
     border-bottom: 1px solid #eee;
 }
@@ -401,11 +401,13 @@ body {
     justify-content: center; /* Center horizontally */
 }
 .product-detail-image img {
-    width: 100%; /* Make image fill the container width */
-    height: 100%; /* Make image fill the container height */
-    object-fit: cover; /* Stretch image to cover the area, might crop */
+    max-width: 100%; /* Make image fill the container width */
+    max-height: 100%; /* Make image fill the container height */
+    width: auto; /* Allow image to scale down */
+    height: auto; /* Allow image to scale down */
+    object-fit: contain; /* Ensure entire image is visible, might leave space */
     display: block;
-    border-radius: 0; /* Remove border-radius here, container already has it */
+    border-radius: 0;
 }
 
 .product-detail-info {
@@ -507,4 +509,260 @@ body {
         width: 100%; /* Buttons take full width on small screens */
         margin: 5px auto; /* Center individual buttons */
     }
+}
+
+/* --- Specific styles for auth/login.php --- */
+.login-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    margin: 40px auto;
+    text-align: center;
+}
+.login-card h2 {
+    font-size: 1.8em;
+    color: #2e7d32;
+    margin-bottom: 25px;
+}
+.login-card .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.login-card .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9em;
+}
+.login-card .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+.login-card .btn-login {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.btn-login:hover {
+    background-color: #256a29;
+}
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.9em;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* --- Specific styles for keranjang/index.php --- */
+.cart-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.cart-item-info {
+    flex-grow: 1;
+}
+.cart-item-info h5 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+.cart-item-info p {
+    margin-bottom: 5px;
+    font-size: 0.85em;
+    color: #666;
+}
+.cart-item-actions {
+    text-align: right;
+}
+.cart-summary {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+.cart-summary h4 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+.btn-checkout {
+    background-color: #2e7d32;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease;
+}
+.btn-checkout:hover {
+    background-color: #256a29;
+}
+
+/* --- Specific styles for transaksi/riwayat.php --- */
+.transaction-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.transaction-card h5 {
+    font-size: 1.1em;
+    color: #2e7d32;
+    margin-bottom: 8px;
+}
+.transaction-card p {
+    font-size: 0.85em;
+    margin-bottom: 3px;
+}
+.transaction-card .item-list {
+    margin-top: 10px;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
+}
+.transaction-card .item-list .item-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+.transaction-card .item-list .item-detail img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.transaction-card .item-list p {
+    margin-bottom: 0;
+    font-size: 0.8em;
+    color: #666;
+}
+.transaction-card .total {
+    font-size: 1em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    color: #ff5722;
+}
+.status-badge {
+    display: inline-block;
+    padding: 0.3em 0.5em;
+    font-size: 0.7em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+.status-badge.pending {
+    background-color: #ffc107;
+    color: #212529;
+} /* Kuning */
+.status-badge.paid {
+    background-color: #28a745;
+} /* Hijau */
+.status-badge.cancelled {
+    background-color: #dc3545;
+} /* Merah */
+.transaction-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+.transaction-actions .btn {
+    font-size: 0.8em;
+    padding: 5px 10px;
+}
+
+/* --- Specific styles for checkout/index.php --- */
+.checkout-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+.checkout-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.checkout-summary {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+.checkout-summary h4 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+.btn-process-checkout {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.btn-process-checkout:hover {
+    background-color: #256a29;
+}
+.form-check {
+    margin-bottom: 10px;
+}
+.form-check-label {     
+    cursor: pointer;
+    padding-left: 5px;
+}
+.form-check-input[type="radio"] {
+    margin-top: 0.3em;
 }
