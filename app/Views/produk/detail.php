@@ -46,7 +46,7 @@
         <?php if (!empty($produk)): ?>
             <div class="product-detail-card">
                 <!-- Kolom KIRI: Gambar Produk -->
-                <div class="product-detail-left-column"> <!-- Ini adalah perubahan div pembungkus -->
+                <div class="product-detail-left-column">
                     <div class="product-detail-image">
                         <?php if ($produk['gambar']): ?>
                             <img src="<?= base_url('uploads/' . esc($produk['gambar'])) ?>" alt="<?= esc($produk['nama']) ?>">
@@ -57,7 +57,7 @@
                 </div>
 
                 <!-- Kolom KANAN: Informasi Produk dan Tombol Aksi -->
-                <div class="product-detail-right-column"> <!-- Ini adalah perubahan div pembungkus -->
+                <div class="product-detail-right-column">
                     <div class="product-detail-info-text">
                         <h2><?= esc($produk['nama']) ?></h2>
                         <p class="price">Rp <?= number_format(esc($produk['harga']), 0, ',', '.') ?></p>
