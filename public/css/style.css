@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    font-size: 16px; /* Base font size for better scaling */
+    font-size: 16px; /* Base font size untuk scaling yang lebih baik */
 }
 .container {
     max-width: 1200px;
@@ -18,14 +18,14 @@ body {
 /* --- CSS untuk Header (Shared across all views) --- */
 .top-navbar-sibayak {
     background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; /* Pemisah abu-abu, ukuran default 1px */
     padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .top-navbar-sibayak .logo-brand {
-    height: 60px; /* Ukuran logo yang proporsional untuk top navbar */
+    height: 55px; /* Sedikit lebih besar dari 45px, tapi tidak terlalu besar */
     margin-right: 15px; /* Tambahkan margin kanan untuk jarak dari search box */
 }
 .top-navbar-sibayak .search-box {
@@ -77,6 +77,7 @@ body {
 .main-menu-sibayak {
     background-color: #343a40; /* Darker background for main menu */
     padding: 8px 0;
+    border-bottom: 0.5px solid #444; /* Pemisah lebih tipis dan sedikit lebih gelap */
 }
 .main-menu-sibayak .container {
     display: flex;
@@ -386,60 +387,72 @@ body {
     margin-top: 30px;
     display: flex; /* Use flexbox for layout */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 30px; /* Space between image and info/buttons */
     align-items: flex-start; /* Align items to the top */
+    /* Menghilangkan gap di sini dan menanganinya secara manual atau di kolom */
+}
+
+.product-detail-left-column { /* Kolom kiri: gambar dan info dasar */
+    flex: 0 0 55%; /* Ambil 55% lebar */
+    max-width: 55%;
+    padding-right: 30px; /* Jarak dari kolom kanan */
+    box-sizing: border-box; /* Pastikan padding termasuk lebar */
+    display: flex;
+    flex-direction: column;
 }
 
 .product-detail-image {
-    flex: 0 0 450px; /* Fixed width for the image container */
+    width: 100%; /* Ambil 100% lebar kolom kiri */
     height: 450px; /* Fixed height for the image container (making it square) */
     background-color: #f8f8f8; /* Uniform background for images */
     border-radius: 8px;
-    overflow: hidden; /* Hide parts of the image that go beyond the container */
+    overflow: hidden;
     display: flex; /* Use flexbox to center the image inside */
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
+    margin-bottom: 20px; /* Jarak antara gambar dan info dasar jika ada di kolom kiri */
 }
 .product-detail-image img {
-    max-width: 100%; /* Make image fill the container width */
-    max-height: 100%; /* Make image fill the container height */
-    width: auto; /* Allow image to scale down */
-    height: auto; /* Allow image to scale down */
+    width: 100%; /* Make image fill the container width */
+    height: 100%; /* Make image fill the container height */
     object-fit: contain; /* Ensure entire image is visible, might leave space */
     display: block;
     border-radius: 0;
 }
 
-.product-detail-info {
-    flex: 1; /* Takes remaining space */
-    min-width: 300px; /* Minimum width for info column */
-    display: flex; /* Use flexbox for inner layout */
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: space-between; /* Push buttons to the bottom */
+.product-detail-right-column { /* Kolom kanan: deskripsi dan tombol */
+    flex: 0 0 45%; /* Ambil 45% lebar */
+    max-width: 45%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Untuk mendorong tombol ke bawah */
 }
-.product-detail-info h2 {
+
+.product-detail-info-text { /* Wrapper untuk judul, harga, deskripsi */
+    flex-grow: 1; /* Biarkan teks mengambil ruang yang tersedia */
+}
+.product-detail-info-text h2 {
     color: #2e7d32;
     margin-bottom: 15px;
     font-size: 2.2em;
 }
-.product-detail-info .price {
+.product-detail-info-text .price {
     font-size: 1.6em;
     font-weight: bold;
     color: #ff5722;
     margin-bottom: 20px;
 }
-.product-detail-info p {
+.product-detail-info-text p {
     line-height: 1.6;
     color: #555;
     margin-bottom: 20px;
     font-size: 0.95em;
-    flex-grow: 1; /* Allow description to take up available space */
 }
 
-.product-detail-info .action-buttons-wrapper {
-    margin-top: auto; /* Push this wrapper to the bottom */
-    text-align: right; /* Align contents to the right */
-    display: flex; /* Use flexbox */
+.action-buttons-wrapper {
+    margin-top: auto; /* Push this wrapper to the bottom of its flex container */
+    text-align: right;
+    display: flex; /* Use flexbox for button alignment */
     justify-content: flex-end; /* Move buttons to the right */
     gap: 10px; /* Space between buttons */
     flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
@@ -473,43 +486,40 @@ body {
 
 /* Media queries for responsiveness */
 @media (max-width: 992px) { /* Adjust for medium screens */
-    .product-detail-image {
-        flex: 0 0 350px;
-        height: 350px;
-    }
-}
-
-@media (max-width: 768px) { /* Adjust for small (tablet) screens */
-    .product-detail-card {
-        flex-direction: column; /* Stack image and info vertically */
-        align-items: center; /* Center items when stacked */
-        gap: 20px;
+    .product-detail-left-column,
+    .product-detail-right-column {
+        flex: 0 0 100%; /* Columns stack on smaller screens */
+        max-width: 100%;
+        padding-right: 0;
     }
     .product-detail-image {
-        flex: 0 0 auto; /* Allow image to size based on max-width */
         max-width: 100%; /* Full width on small screens */
-        height: 300px; /* Fixed height for image container on small screens */
+        height: 350px; /* Fixed height for image container */
     }
-    .product-detail-info {
-        min-width: unset;
-        width: 100%; /* Full width for info column */
-        text-align: center; /* Center text when stacked */
+    .product-detail-info-text,
+    .action-buttons-wrapper {
+        text-align: center; /* Center content when stacked */
+        width: 100%;
     }
-    .product-detail-info p {
-        text-align: left; /* Keep description text left-aligned */
+    .product-detail-info-text p {
+        text-align: center; /* Center description text */
     }
-    .product-detail-info .action-buttons-wrapper {
+    .action-buttons-wrapper {
         justify-content: center; /* Center buttons when stacked */
-        text-align: center;
-        width: 100%; /* Buttons take full width */
-        margin-top: 15px;
     }
     .btn-back-to-products,
     .btn-add-to-cart-detail {
-        width: 100%; /* Buttons take full width on small screens */
+        width: 100%; /* Buttons take full width on smaller screens */
         margin: 5px auto; /* Center individual buttons */
     }
 }
+
+@media (max-width: 768px) { /* Further adjustments for small mobile screens */
+    .product-detail-image {
+        height: 250px; /* Smaller height for very small screens */
+    }
+}
+
 
 /* --- Specific styles for auth/login.php --- */
 .login-card {
@@ -759,7 +769,7 @@ body {
 .form-check {
     margin-bottom: 10px;
 }
-.form-check-label {     
+.form-check-label {
     cursor: pointer;
     padding-left: 5px;
 }

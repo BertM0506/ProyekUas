@@ -46,21 +46,25 @@
         <?php if (!empty($produk)): ?>
             <div class="product-detail-card">
                 <!-- Kolom KIRI: Gambar Produk -->
-                <div class="product-detail-image">
-                    <?php if ($produk['gambar']): ?>
-                        <img src="<?= base_url('uploads/' . esc($produk['gambar'])) ?>" alt="<?= esc($produk['nama']) ?>">
-                    <?php else: ?>
-                        <img src="<?= base_url('images/default_product.png') ?>" alt="Gambar Default">
-                    <?php endif; ?>
+                <div class="product-detail-left-column"> <!-- Ini adalah perubahan div pembungkus -->
+                    <div class="product-detail-image">
+                        <?php if ($produk['gambar']): ?>
+                            <img src="<?= base_url('uploads/' . esc($produk['gambar'])) ?>" alt="<?= esc($produk['nama']) ?>">
+                        <?php else: ?>
+                            <img src="<?= base_url('images/default_product.png') ?>" alt="Gambar Default">
+                        <?php endif; ?>
+                    </div>
                 </div>
 
                 <!-- Kolom KANAN: Informasi Produk dan Tombol Aksi -->
-                <div class="product-detail-info">
-                    <h2><?= esc($produk['nama']) ?></h2>
-                    <p class="price">Rp <?= number_format(esc($produk['harga']), 0, ',', '.') ?></p>
-                    <p><?= esc($produk['deskripsi']) ?></p>
+                <div class="product-detail-right-column"> <!-- Ini adalah perubahan div pembungkus -->
+                    <div class="product-detail-info-text">
+                        <h2><?= esc($produk['nama']) ?></h2>
+                        <p class="price">Rp <?= number_format(esc($produk['harga']), 0, ',', '.') ?></p>
+                        <p><?= esc($produk['deskripsi']) ?></p>
+                    </div>
                     
-                    <!-- Wrapper baru untuk tombol aksi agar bisa diatur ke kanan -->
+                    <!-- Wrapper untuk tombol aksi -->
                     <div class="action-buttons-wrapper">
                         <a href="<?= base_url('produk') ?>" class="btn-back-to-products">Kembali ke Daftar Produk</a>
                         <form action="<?= base_url('keranjang/tambah') ?>" method="post" class="d-inline">
