@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    font-size: 16px; /* Base font size untuk scaling yang lebih baik */
+    font-size: 16px; /* Base font size for better scaling */
 }
 .container {
     max-width: 1200px;
@@ -15,7 +15,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- CSS untuk Header (Shared across all views) --- */
+/* --- CSS for Header (Shared across all views) --- */
 .top-navbar-sibayak {
     background-color: #f8f9fa;
     border-bottom: 1px solid #e0e0e0;
@@ -25,8 +25,8 @@ body {
     justify-content: space-between;
 }
 .top-navbar-sibayak .logo-brand {
-    height: 45px; /* Kembali ke ukuran yang lebih proporsional untuk top navbar */
-    margin-right: 15px; /* Tambahkan margin kanan untuk jarak dari search box */
+    height: 45px; /* Back to a more proportional size for top navbar */
+    margin-right: 15px; /* Add right margin for spacing from search box */
 }
 .top-navbar-sibayak .search-box {
     display: flex;
@@ -35,14 +35,14 @@ body {
     border-radius: 5px;
     overflow: hidden;
     flex-grow: 1;
-    max-width: 400px; /* Sesuaikan lebar max search bar */
+    max-width: 400px; /* Adjust max search bar width */
 }
 .top-navbar-sibayak .search-box input {
     border: none;
     padding: 8px 10px;
     flex-grow: 1;
     outline: none;
-    font-size: 0.9em; /* Sesuaikan font size */
+    font-size: 0.9em;
 }
 .top-navbar-sibayak .search-box button {
     background-color: #2e7d32;
@@ -50,37 +50,37 @@ body {
     border: none;
     padding: 8px 12px;
     cursor: pointer;
-    font-size: 0.9em; /* Sesuaikan font size */
+    font-size: 0.9em;
 }
 .top-navbar-sibayak .user-cart-menu {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: auto; /* Memindahkan ke kanan */
+    margin-left: auto; /* Moves to the right */
 }
 .top-navbar-sibayak .user-cart-menu a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9em; /* Sesuaikan font size */
+    font-size: 0.9em;
 }
 .top-navbar-sibayak .user-cart-menu a i {
     margin-right: 5px;
 }
 .top-navbar-sibayak .user-cart-menu .btn {
-    font-size: 0.8em; /* Ukuran font tombol login/logout */
-    padding: 5px 10px; /* Padding tombol */
+    font-size: 0.8em;
+    padding: 5px 10px;
 }
 
 
 /* Secondary Navbar / Main Menu */
 .main-menu-sibayak {
     background-color: #343a40; /* Darker background for main menu */
-    padding: 8px 0; /* Sesuaikan padding */
+    padding: 8px 0;
 }
 .main-menu-sibayak .container {
     display: flex;
-    justify-content: flex-end; /* Menu Pindah ke KANAN */
+    justify-content: flex-end; /* Menu Moves to the right */
 }
 .main-menu-sibayak ul {
     list-style: none;
@@ -91,10 +91,10 @@ body {
 .main-menu-sibayak ul li a {
     color: white;
     text-decoration: none;
-    padding: 8px 15px; /* Sesuaikan padding menu */
+    padding: 8px 15px;
     display: block;
     font-weight: bold;
-    font-size: 0.9em; /* Sesuaikan font size */
+    font-size: 0.9em;
     transition: background-color 0.3s ease;
 }
 .main-menu-sibayak ul li a:hover {
@@ -121,17 +121,17 @@ body {
 .hero-section {
     background-color: #f0f8ff;
     text-align: center;
-    padding: 40px 20px; /* Sesuaikan padding */
+    padding: 40px 20px;
     margin-bottom: 30px;
     border-bottom: 1px solid #ddd;
 }
 .hero-section h2 {
-    font-size: 2.5em; /* Sesuaikan font size */
+    font-size: 2.5em;
     color: #2e7d32;
     margin-bottom: 15px;
 }
 .hero-section p {
-    font-size: 1.1em; /* Sesuaikan font size */
+    font-size: 1.1em;
     color: #555;
     max-width: 800px;
     margin: 0 auto 30px auto;
@@ -144,7 +144,7 @@ body {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
-    font-size: 1.8em; /* Sesuaikan font size */
+    font-size: 1.8em;
 }
 .product-scroll-wrapper {
     position: relative;
@@ -180,8 +180,8 @@ body {
     transition: transform 0.2s ease-in-out;
     margin-bottom: 20px;
     display: inline-block;
-    width: 250px; /* Sesuaikan lebar kartu */
-    margin-right: 15px; /* Sesuaikan margin antar kartu */
+    width: 250px;
+    margin-right: 15px;
     vertical-align: top;
     text-align: center;
 }
@@ -193,22 +193,22 @@ body {
 }
 .product-card img {
     width: 100%;
-    height: 180px; /* Sesuaikan tinggi gambar */
+    height: 180px;
     object-fit: cover;
     display: block;
     border-bottom: 1px solid #eee;
 }
 .product-card-body {
-    padding: 10px; /* Sesuaikan padding */
+    padding: 10px;
     text-align: center;
 }
 .product-card-body h5 {
-    font-size: 1em; /* Sesuaikan font size */
+    font-size: 1em;
     margin-bottom: 8px;
     color: #333;
 }
 .product-card-body p.price {
-    font-size: 1em; /* Sesuaikan font size */
+    font-size: 1em;
     color: #2e7d32;
     font-weight: bold;
     margin-bottom: 10px;
@@ -216,10 +216,10 @@ body {
 .product-card-body .btn-view {
     background-color: #2e7d32;
     color: white;
-    padding: 6px 15px; /* Sesuaikan padding */
+    padding: 6px 15px;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 0.9em; /* Sesuaikan font size */
+    font-size: 0.9em;
     transition: background-color 0.3s ease;
     border: none;
 }
@@ -236,14 +236,14 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 8px 12px; /* Sesuaikan padding */
+    padding: 8px 12px;
     cursor: pointer;
     z-index: 10;
-    font-size: 1.2em; /* Sesuaikan font size */
+    font-size: 1.2em;
     line-height: 1;
     border-radius: 50%;
-    width: 35px; /* Sesuaikan ukuran */
-    height: 35px; /* Sesuaikan ukuran */
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,11 +277,11 @@ body {
 .product-grid-header .sort-dropdown select {
     border: 1px solid #ced4da;
     border-radius: 5px;
-    padding: 6px 8px; /* Sesuaikan padding */
-    font-size: 0.8em; /* Sesuaikan font size */
+    padding: 6px 8px;
+    font-size: 0.8em;
 }
 .product-grid-header .results-info {
-    font-size: 0.8em; /* Sesuaikan font size */
+    font-size: 0.8em;
     color: #555;
 }
 
@@ -302,27 +302,27 @@ body {
 }
 .product-card-sibayak .card-img-top {
     width: 100%;
-    height: 180px; /* Sesuaikan tinggi gambar */
-    object-fit: cover;
+    height: 180px;
+    object-fit: cover; /* Use cover to ensure image fills the space */
     display: block;
     border-bottom: 1px solid #eee;
 }
 .product-card-sibayak .card-body {
-    padding: 10px; /* Sesuaikan padding */
+    padding: 10px;
 }
 .product-card-sibayak .card-body .product-name {
-    font-size: 1em; /* Sesuaikan font size */
+    font-size: 1em;
     font-weight: bold;
     color: #333;
     margin-bottom: 8px;
-    height: 40px; /* Untuk konsistensi tinggi nama produk */
+    height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .product-card-sibayak .card-body .product-price {
-    font-size: 1.2em; /* Sesuaikan font size */
+    font-size: 1.2em;
     font-weight: bold;
-    color: #2e7d32; /* Hijau */
+    color: #2e7d32;
     margin-bottom: 12px;
 }
 .product-card-sibayak .card-body .btn-detail,
@@ -330,23 +330,23 @@ body {
     display: block;
     width: 90%;
     margin: 5px auto;
-    padding: 8px 0; /* Sesuaikan padding */
+    padding: 8px 0;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.9em; /* Sesuaikan font size */
+    font-size: 0.9em;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 .product-card-sibayak .card-body .btn-detail {
-    background-color: #007bff; /* Biru */
+    background-color: #007bff;
     color: white;
 }
 .product-card-sibayak .card-body .btn-detail:hover {
     background-color: #0056b3;
 }
 .product-card-sibayak .card-body .btn-add-cart {
-    background-color: #ffc107; /* Kuning */
-    color: #212529; /* Teks gelap */
+    background-color: #ffc107;
+    color: #212529;
     border: none;
 }
 .product-card-sibayak .card-body .btn-add-cart:hover {
@@ -361,11 +361,11 @@ body {
 .pagination-sibayak .page-item .page-link {
     color: #333;
     border: 1px solid #dee2e6;
-    margin: 0 3px; /* Sesuaikan margin */
+    margin: 0 3px;
     border-radius: 5px;
     transition: background-color 0.2s ease, color 0.2s ease;
-    font-size: 0.9em; /* Sesuaikan font size */
-    padding: 6px 12px; /* Sesuaikan padding */
+    font-size: 0.9em;
+    padding: 6px 12px;
 }
 .pagination-sibayak .page-item.active .page-link {
     background-color: #2e7d32;
@@ -377,259 +377,134 @@ body {
     color: #2e7d32;
 }
 
-/* --- Specific styles for auth/login.php --- */
-.login-card {
+/* --- Specific styles for product detail page (produk/detail.php) --- */
+.product-detail-card {
     background-color: #fff;
-    padding: 30px; /* Sesuaikan padding */
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 350px; /* Sesuaikan lebar */
-    margin: 40px auto; /* Sesuaikan margin */
-    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between image and info/buttons */
+    align-items: flex-start; /* Align items to the top */
 }
-.login-card h2 {
-    font-size: 1.8em; /* Sesuaikan font size */
-    color: #2e7d32;
-    margin-bottom: 25px;
+
+.product-detail-image {
+    flex: 0 0 450px; /* Fixed width for the image container */
+    height: 450px; /* Fixed height for the image container (making it square) */
+    background-color: #f8f8f8; /* Uniform background for images */
+    border-radius: 8px;
+    overflow: hidden; /* Hide parts of the image that go beyond the container */
+    display: flex; /* Use flexbox to center the image inside */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
-.login-card .form-group {
-    margin-bottom: 15px; /* Sesuaikan margin */
-    text-align: left;
-}
-.login-card .form-group label {
+.product-detail-image img {
+    width: 100%; /* Make image fill the container width */
+    height: 100%; /* Make image fill the container height */
+    object-fit: cover; /* Stretch image to cover the area, might crop */
     display: block;
-    margin-bottom: 5px; /* Sesuaikan margin */
-    font-weight: bold;
-    color: #333;
-    font-size: 0.9em; /* Sesuaikan font size */
-}
-.login-card .form-control {
-    width: 100%;
-    padding: 8px; /* Sesuaikan padding */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 0.9em; /* Sesuaikan font size */
-}
-.login-card .btn-login {
-    background-color: #2e7d32;
-    color: white;
-    padding: 10px 20px; /* Sesuaikan padding */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em; /* Sesuaikan font size */
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-.btn-login:hover {
-    background-color: #256a29;
-}
-.alert {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: left;
-    font-size: 0.9em; /* Sesuaikan font size */
-}
-.alert-danger {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    border-radius: 0; /* Remove border-radius here, container already has it */
 }
 
-/* --- Specific styles for keranjang/index.php --- */
-.cart-item {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.product-detail-info {
+    flex: 1; /* Takes remaining space */
+    min-width: 300px; /* Minimum width for info column */
+    display: flex; /* Use flexbox for inner layout */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Push buttons to the bottom */
 }
-.cart-item img {
-    width: 70px; /* Sesuaikan ukuran */
-    height: 70px; /* Sesuaikan ukuran */
-    object-fit: cover;
-    border-radius: 5px;
-}
-.cart-item-info {
-    flex-grow: 1;
-}
-.cart-item-info h5 {
-    font-size: 1.1em; /* Sesuaikan font size */
-    margin-bottom: 5px;
-    color: #333;
-}
-.cart-item-info p {
-    margin-bottom: 5px;
-    font-size: 0.85em; /* Sesuaikan font size */
-    color: #666;
-}
-.cart-item-actions {
-    text-align: right;
-}
-.cart-summary {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 15px; /* Sesuaikan padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-top: 20px;
-}
-.cart-summary h4 {
-    font-size: 1.3em; /* Sesuaikan font size */
+.product-detail-info h2 {
     color: #2e7d32;
     margin-bottom: 15px;
+    font-size: 2.2em;
 }
-.btn-checkout {
-    background-color: #2e7d32;
-    color: white;
-    padding: 8px 15px; /* Sesuaikan padding */
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 0.95em; /* Sesuaikan font size */
-    transition: background-color 0.3s ease;
-}
-.btn-checkout:hover {
-    background-color: #256a29;
-}
-
-/* --- Specific styles for transaksi/riwayat.php --- */
-.transaction-card {
-    background-color: #fff;
-    padding: 15px; /* Sesuaikan padding */
-    border-radius: 8px;
-    margin-bottom: 15px; /* Sesuaikan margin */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-.transaction-card h5 {
-    font-size: 1.1em; /* Sesuaikan font size */
-    color: #2e7d32;
-    margin-bottom: 8px; /* Sesuaikan margin */
-}
-.transaction-card p {
-    font-size: 0.85em; /* Sesuaikan font size */
-    margin-bottom: 3px;
-}
-.transaction-card .item-list {
-    margin-top: 10px;
-    border-top: 1px dashed #eee;
-    padding-top: 10px;
-}
-.transaction-card .item-list .item-detail {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px; /* Sesuaikan margin */
-    gap: 8px; /* Sesuaikan gap */
-}
-.transaction-card .item-list .item-detail img {
-    width: 40px; /* Sesuaikan ukuran */
-    height: 40px; /* Sesuaikan ukuran */
-    object-fit: cover;
-    border-radius: 3px;
-}
-.transaction-card .item-list p {
-    margin-bottom: 0;
-    font-size: 0.8em; /* Sesuaikan font size */
-    color: #666;
-}
-.transaction-card .total {
-    font-size: 1em; /* Sesuaikan font size */
+.product-detail-info .price {
+    font-size: 1.6em;
     font-weight: bold;
-    text-align: right;
-    margin-top: 10px; /* Sesuaikan margin */
     color: #ff5722;
+    margin-bottom: 20px;
 }
-.status-badge {
-    display: inline-block;
-    padding: 0.3em 0.5em; /* Sesuaikan padding */
-    font-size: 0.7em; /* Sesuaikan font size */
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-}
-.status-badge.pending {
-    background-color: #ffc107;
-    color: #212529;
-} /* Kuning */
-.status-badge.paid {
-    background-color: #28a745;
-} /* Hijau */
-.status-badge.cancelled {
-    background-color: #dc3545;
-} /* Merah */
-.transaction-actions {
-    margin-top: 10px; /* Sesuaikan margin */
-    text-align: right;
-}
-.transaction-actions .btn {
-    font-size: 0.8em; /* Sesuaikan font size tombol konfirmasi */
-    padding: 5px 10px; /* Sesuaikan padding tombol konfirmasi */
+.product-detail-info p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    flex-grow: 1; /* Allow description to take up available space */
 }
 
-/* --- Specific styles for checkout/index.php --- */
-.checkout-item {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+.product-detail-info .action-buttons-wrapper {
+    margin-top: auto; /* Push this wrapper to the bottom */
+    text-align: right; /* Align contents to the right */
+    display: flex; /* Use flexbox */
+    justify-content: flex-end; /* Move buttons to the right */
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
-.checkout-item img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-.checkout-summary {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-    margin-top: 20px;
-}
-.checkout-summary h4 {
-    color: #2e7d32;
-    margin-bottom: 15px;
-}
-.btn-process-checkout {
-    background-color: #2e7d32;
+.btn-back-to-products {
+    background-color: #6c757d; /* Gray color */
     color: white;
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
-    width: 100%;
+    text-decoration: none;
     transition: background-color 0.3s ease;
+    font-size: 0.9em;
 }
-.btn-process-checkout:hover {
-    background-color: #256a29;
+.btn-back-to-products:hover {
+    background-color: #5a6268;
+    color: white;
 }
-.form-check {
-    margin-bottom: 10px;
+.btn-add-to-cart-detail {
+    background-color: #28a745; /* Success green color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    font-size: 0.9em;
 }
-.form-check-label {
-    cursor: pointer;
-    padding-left: 5px;
+.btn-add-to-cart-detail:hover {
+    background-color: #218838;
 }
-.form-check-input[type="radio"] {
-    margin-top: 0.3em;
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) { /* Adjust for medium screens */
+    .product-detail-image {
+        flex: 0 0 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) { /* Adjust for small (tablet) screens */
+    .product-detail-card {
+        flex-direction: column; /* Stack image and info vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 20px;
+    }
+    .product-detail-image {
+        flex: 0 0 auto; /* Allow image to size based on max-width */
+        max-width: 100%; /* Full width on small screens */
+        height: 300px; /* Fixed height for image container on small screens */
+    }
+    .product-detail-info {
+        min-width: unset;
+        width: 100%; /* Full width for info column */
+        text-align: center; /* Center text when stacked */
+    }
+    .product-detail-info p {
+        text-align: left; /* Keep description text left-aligned */
+    }
+    .product-detail-info .action-buttons-wrapper {
+        justify-content: center; /* Center buttons when stacked */
+        text-align: center;
+        width: 100%; /* Buttons take full width */
+        margin-top: 15px;
+    }
+    .btn-back-to-products,
+    .btn-add-to-cart-detail {
+        width: 100%; /* Buttons take full width on small screens */
+        margin: 5px auto; /* Center individual buttons */
+    }
 }

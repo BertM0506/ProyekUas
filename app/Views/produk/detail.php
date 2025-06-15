@@ -45,6 +45,7 @@
     <div class="container my-5">
         <?php if (!empty($produk)): ?>
             <div class="product-detail-card">
+                <!-- Kolom KIRI: Gambar Produk -->
                 <div class="product-detail-image">
                     <?php if ($produk['gambar']): ?>
                         <img src="<?= base_url('uploads/' . esc($produk['gambar'])) ?>" alt="<?= esc($produk['nama']) ?>">
@@ -52,6 +53,8 @@
                         <img src="<?= base_url('images/default_product.png') ?>" alt="Gambar Default">
                     <?php endif; ?>
                 </div>
+
+                <!-- Kolom KANAN: Informasi Produk dan Tombol Aksi -->
                 <div class="product-detail-info">
                     <h2><?= esc($produk['nama']) ?></h2>
                     <p class="price">Rp <?= number_format(esc($produk['harga']), 0, ',', '.') ?></p>
@@ -80,4 +83,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</ht
+</html>
