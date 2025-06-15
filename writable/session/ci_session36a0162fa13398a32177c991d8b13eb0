@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1749912740;_ci_previous_url|s:40:"http://localhost:8080/index.php/checkout";isLoggedIn|b:1;userId|s:1:"1";username|s:5:"admin";error|s:167:"Checkout gagal: Gagal membuat transaksi. Validasi Model: Table 'platformuas.transactions' doesn't exist Error DB: (1146) Table 'platformuas.transactions' doesn't exist";__ci_vars|a:1:{s:5:"error";s:3:"old";}
