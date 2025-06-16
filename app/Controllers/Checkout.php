@@ -74,8 +74,8 @@ class Checkout extends BaseController
         $transaksiModel->db->transBegin();
 
         try {
-            $paymentMethod = $this->request->getPost('payment_method'); // <--- Ambil metode pembayaran dari form
-            if (empty($paymentMethod)) { // Validasi sederhana jika user tidak memilih
+            $paymentMethod = $this->request->getPost('payment_method'); 
+            if (empty($paymentMethod)) { 
                 throw new \Exception('Metode pembayaran harus dipilih.');
             }
 
