@@ -7,21 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
-    <!-- Style kustom dipindahkan ke public/css/style.css -->
 </head>
 <body>
 
-   <nav class="top-navbar-sibayak">
+    <nav class="top-navbar-sibayak">
         <div class="container d-flex align-items-center">
             <a href="<?= base_url('/') ?>">
                 <img src="<?= base_url('uploads/logo.png') ?>" alt="PDMP Outdoor Logo" class="logo-brand">
             </a>
-            <!-- FORMULIR PENCARIAN -->
-            <form action="<?= base_url('produk') ?>" method="get" class="search-box" onsubmit="return true;"> <!-- Tambah onsubmit="return true;" -->
+            <form action="<?= base_url('produk') ?>" method="get" class="search-box" onsubmit="return true;">
                 <input type="text" name="keyword" placeholder="" aria-label="Cari produk" value="<?= service('request')->getGet('keyword') ?? '' ?>">
                 <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
             </form>
-            <!-- AKHIR FORMULIR PENCARIAN -->
             <div class="user-cart-menu">
                 <?php if (session()->get('isLoggedIn')): ?>
                     <a href="<?= base_url('keranjang') ?>"><i class="fas fa-shopping-cart"></i> Keranjang</a>
@@ -34,7 +31,6 @@
         </div>
     </nav>
 
-    <!-- Main Menu (Mirip Sibayak) -->
     <nav class="main-menu-sibayak">
         <div class="container">
             <ul class="ms-auto">
