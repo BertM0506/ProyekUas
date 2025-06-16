@@ -42,10 +42,6 @@ class Transaksi extends BaseController
         return view('transaksi/riwayat', $data);
     }
 
-    /**
-     * Metode untuk mengkonfirmasi status pembayaran transaksi.
-     * Hanya simulasi.
-     */
     public function confirmPayment($transaksiId = null)
     {
         $session = session();
@@ -60,16 +56,13 @@ class Transaksi extends BaseController
         $transaksiModel = new TransaksiModel();
         $transaksi = $transaksiModel->find($transaksiId);
 
-        // Pastikan transaksi ditemukan dan milik user yang sedang login
         if (empty($transaksi) || $transaksi['user_id'] != $session->get('userId')) {
             return redirect()->to('/transaksi')->with('error', 'Transaksi tidak ditemukan atau Anda tidak memiliki akses.');
         }
 
-        // Hanya bisa konfirmasi jika status masih 'pending'
         if ($transaksi['status_pembayaran'] == 'pending') {
             $updateData = [
-                'status_pembayaran' => 'paid', // Mengubah status menjadi 'paid' atau 'berhasil'
-                // 'bukti_pembayaran' => 'Pembayaran_oleh_' . $session->get('username') . '_pada_' . date('Ymd_His'), // Isi jika kolom ada
+                'status_pembayaran' => 'paid',
             ];
 
             if ($transaksiModel->update($transaksiId, $updateData)) {
