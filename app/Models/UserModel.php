@@ -5,15 +5,14 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table = 'users'; // SESUAIKAN DENGAN NAMA TABEL DI DATABASE
+    protected $table = 'users';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['username', 'password', 'nama']; // SESUAIKAN DENGAN NAMA KOLOM DI DATABASE
 
-    protected $useTimestamps = true; // Jika tabel users punya created_at/updated_at
+    protected $allowedFields = ['username', 'password', 'nama'];
+
+    protected $useTimestamps = false; 
     protected $createdField  = 'created_at';
-    // protected $updatedField  = 'updated_at';
 
-    // Otomatis hash password sebelum insert/update
     protected $beforeInsert = ['hashPassword'];
     protected $beforeUpdate = ['hashPassword'];
 
