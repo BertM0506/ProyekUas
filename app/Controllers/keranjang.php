@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\CartModel;
-use App\Models\ProdukModel; // Pastikan ini dipanggil
+use App\Models\ProdukModel;
 
 class Keranjang extends BaseController
 {
@@ -19,14 +19,12 @@ class Keranjang extends BaseController
 
         $total = 0;
         foreach ($data['keranjang'] as $item) {
-            // UBAH DARI $item['jumlah'] MENJADI $item['quantity']
-            $total += $item['quantity'] * $item['harga']; // <--- PERUBAHAN DI SINI
+            $total += $item['quantity'] * $item['harga'];
         }
         $data['total_keranjang'] = $total;
 
         return view('keranjang/index', $data);
     }
-
 
     public function tambah()
     {
@@ -36,25 +34,21 @@ class Keranjang extends BaseController
         }
 
         $userId = $session->get('userId');
-        $produkId = $this->request->getPost('produk_id'); // Nama input dari form ini sudah benar
+        $produkId = $this->request->getPost('produk_id');
 
         $cartModel = new CartModel();
 
-        // Cek apakah produk sudah ada di keranjang
         $existingItem = $cartModel->where('user_id', $userId)
-                                  ->where('product_id', $produkId) // <--- PERUBAHAN DI SINI: DARI 'produk_id' MENJADI 'product_id'
+                                  ->where('product_id', $produkId)
                                   ->first();
 
         if ($existingItem) {
-            // Jika sudah ada, update jumlahnya
-            // Pastikan kolom 'jumlah' di database adalah 'quantity'
-            $cartModel->update($existingItem['id'], ['quantity' => $existingItem['quantity'] + 1]); // <--- PERUBAHAN JUMLAH JUGA
+            $cartModel->update($existingItem['id'], ['quantity' => $existingItem['quantity'] + 1]);
         } else {
-            // Jika belum ada, tambahkan baru
             $cartModel->insert([
                 'user_id' => $userId,
-                'product_id' => $produkId, // <--- PERUBAHAN DI SINI: DARI 'produk_id' MENJADI 'product_id'
-                'quantity' => 1 // <--- PERUBAHAN DI SINI: DARI 'jumlah' MENJADI 'quantity'
+                'product_id' => $produkId,
+                'quantity' => 1
             ]);
         }
 
