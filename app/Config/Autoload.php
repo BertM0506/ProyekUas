@@ -14,5 +14,5 @@ class Autoload extends AutoloadConfig
 
     public $files = [];
 
-    public $helpers = ['url', 'form', 'session']; // PASTIKAN BARIS INI
+    public $helpers = ['url', 'form', 'session']; 
 }

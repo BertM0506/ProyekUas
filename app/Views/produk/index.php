@@ -15,12 +15,10 @@
             <a href="<?= base_url('/') ?>">
                 <img src="<?= base_url('uploads/logo.png') ?>" alt="PDMP Outdoor Logo" class="logo-brand">
             </a>
-            <!-- FORMULIR PENCARIAN -->
-            <form action="<?= base_url('produk') ?>" method="get" class="search-box" onsubmit="return true;"> <!-- Tambah onsubmit="return true;" -->
+            <form action="<?= base_url('produk') ?>" method="get" class="search-box" onsubmit="return true;"> 
                 <input type="text" name="keyword" placeholder="" aria-label="Cari produk" value="<?= service('request')->getGet('keyword') ?? '' ?>">
                 <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
             </form>
-            <!-- AKHIR FORMULIR PENCARIAN -->
             <div class="user-cart-menu">
                 <?php if (session()->get('isLoggedIn')): ?>
                     <a href="<?= base_url('keranjang') ?>"><i class="fas fa-shopping-cart"></i> Keranjang</a>
@@ -33,7 +31,6 @@
         </div>
     </nav>
 
-    <!-- Main Menu (Mirip Sibayak) -->
     <nav class="main-menu-sibayak">
         <div class="container">
             <ul class="ms-auto">
@@ -45,19 +42,16 @@
 
     <div class="container main-content-area">
         <div class="row">
-            <!-- Main Product Content sekarang mengambil lebar penuh -->
             <div class="col-md-12">
                 <div class="product-grid-header">
                     <div class="sort-dropdown">
                         <form action="<?= current_url() ?>" method="get" id="sortForm">
                             <select class="form-select" name="sort" onchange="document.getElementById('sortForm').submit()">
-                                <!-- Menghapus opsi "popularitas" dan "terbaru" -->
                                 <option value="price_asc" <?= (service('request')->getGet('sort') == 'price_asc') ? 'selected' : '' ?>>Urutkan berdasarkan harga: rendah ke tinggi</option>
                                 <option value="price_desc" <?= (service('request')->getGet('sort') == 'price_desc') ? 'selected' : '' ?>>Urutkan berdasarkan harga: tinggi ke rendah</option>
                             </select>
                         </form>
                     </div>
-                    <!-- Menghapus div results-info -->
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -90,7 +84,6 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- Pagination -->
                 <nav aria-label="Product Pagination" class="d-flex pagination-sibayak">
                     <?= $pager->links('default', 'bootstrap_full') ?>
                 </nav>

@@ -9,9 +9,8 @@ class TransaksiModel extends Model
     protected $table        = 'transaksi';
     protected $primaryKey = 'id';
 
-    // PASTIKAN NAMA KOLOM INI ADA DI DATABASE 'transaksi' ANDA
     protected $allowedFields = ['user_id', 'total_harga', 'tanggal', 'metode_pembayaran', 'status_pembayaran', 'bukti_pembayaran'];
-    protected $useTimestamps = false; // Tetap false jika tidak ada kolom updated_at
+    protected $useTimestamps = false; 
 
     public function getTransaksiByUser($userId)
     {

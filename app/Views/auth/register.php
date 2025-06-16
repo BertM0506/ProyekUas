@@ -10,7 +10,6 @@
 </head>
 <body>
 
-    <!-- Top Navbar (Mirip Sibayak) -->
     <nav class="top-navbar-sibayak">
         <div class="container d-flex align-items-center">
             <a href="<?= base_url('/') ?>">
@@ -32,7 +31,6 @@
         </div>
     </nav>
 
-    <!-- Main Menu (Mirip Sibayak) -->
     <nav class="main-menu-sibayak">
         <div class="container">
             <ul class="ms-auto">
@@ -43,7 +41,7 @@
     </nav>
 
     <div class="container">
-        <div class="login-card"> <!-- Menggunakan style login-card agar tampilan seragam -->
+        <div class="login-card"> 
             <h2>Daftar Akun Baru</h2>
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="alert alert-danger">

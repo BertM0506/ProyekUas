@@ -38,49 +38,37 @@ class Auth extends BaseController
         return redirect()->to('/');
     }
 
-    // --- METODE BARU UNTUK REGISTRASI ---
 
-    /**
-     * Menampilkan halaman pendaftaran user baru.
-     */
     public function register()
     {
-        return view('auth/register'); // Memuat view register.php
+        return view('auth/register'); 
     }
 
-    /**
-     * Memproses pengiriman form pendaftaran user baru.
-     */
+ 
     public function registerPost()
     {
         $userModel = new UserModel();
 
-        // Ambil data dari form
         $rules = [
             'username' => 'required|min_length[3]|max_length[20]|is_unique[users.username]',
             'password' => 'required|min_length[6]',
-            'pass_confirm' => 'required_with[password]|matches[password]', // Konfirmasi password
-            'nama'     => 'required|max_length[50]', // Asumsi kolom 'nama' ada di DB
+            'pass_confirm' => 'required_with[password]|matches[password]', 
+            'nama'     => 'required|max_length[50]', 
         ];
 
-        // Jalankan validasi
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        // Siapkan data untuk disimpan
         $data = [
             'username' => $this->request->getPost('username'),
-            'password' => $this->request->getPost('password'), // Password akan dihash otomatis oleh UserModel
+            'password' => $this->request->getPost('password'), 
             'nama'     => $this->request->getPost('nama'),
         ];
 
-        // Simpan data user ke database
         if ($userModel->insert($data)) {
-            // Jika pendaftaran berhasil, arahkan ke halaman login dengan pesan sukses
             return redirect()->to('/login')->with('success', 'Pendaftaran berhasil! Silakan login.');
         } else {
-            // Jika gagal menyimpan (misal error DB lainnya), arahkan kembali dengan pesan error
             return redirect()->back()->withInput()->with('error', 'Gagal mendaftar. Silakan coba lagi.');
         }
     }
