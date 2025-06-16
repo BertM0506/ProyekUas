@@ -16,16 +16,13 @@ $routes->get('/', 'Home::index');
 $routes->get('/produk', 'Produk::index');
 $routes->get('/produk/detail/(:num)', 'Produk::detail/$1');
 
-// Grup route yang hanya bisa diakses jika BELUM login (login dan register)
 $routes->group('', ['filter' => 'noauth'], function($routes) {
     $routes->get('/login', 'Auth::login');
     $routes->post('/login', 'Auth::loginPost');
-    // ROUTE BARU UNTUK REGISTER
-    $routes->get('/register', 'Auth::register');       // Menampilkan form register
-    $routes->post('/register', 'Auth::registerPost'); // Memproses form register
+    $routes->get('/register', 'Auth::register');
+    $routes->post('/register', 'Auth::registerPost'); 
 });
 
-// Grup route yang hanya bisa diakses jika SUDAH login
 $routes->group('', ['filter' => 'auth'], function($routes) {
     $routes->get('/dashboard', 'Dashboard::index');
     $routes->get('/keranjang', 'Keranjang::index');
